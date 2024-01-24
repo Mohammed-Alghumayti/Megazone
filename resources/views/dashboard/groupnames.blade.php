@@ -1,12 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
-
 <div class="container">
     <div class="row text-center ">
 
         <h1 class="mb-5">
             <div class=" alert alert-success">
-                <strong>بيانات المنتجات</strong>
+                <strong>بيانات المجموعات</strong>
             </div>
         </h1>
 
@@ -15,26 +14,18 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th style="font-weight: bolder;">رقم العنصر</th>
-                            <th style="font-weight: bolder;">اسم العنصر</th>
-                            <th style="font-weight: bolder;">سعر العنصر</th>
-                            <th style="font-weight: bolder;">الكمية</th>
-                            <th style="font-weight: bolder;">لون العنصر</th>
                             <th style="font-weight: bolder;">رقم المجموعة</th>
+                            <th style="font-weight: bolder;">اسم المجموعة</th>
                             <th style="font-weight: bolder;">حذف</th>
                             <th style="font-weight: bolder;">تعديل</th>
                         </tr>
                     </thead>
-                    @if(isset($itmeskey))
+                    @if(isset($groupnameskey))
                     <tbody>
-                        @foreach($itmeskey as $row)
+                        @foreach($groupnameskey as $row)
                         <tr>
                             <td>{{$row['id']}}</td>
-                            <td>{{$row['itemname']}}</td>
-                            <td>{{$row['price']}}</td>
-                            <td>{{$row['qty']}}</td>
-                            <td>{{$row['color']}}</td>
-                            <td>{{$row['itemgroupno']}}</td>
+                            <td>{{$row['itemgroupname']}}</td>
                             <td><a href=""><i class="bi bi-trash text-danger"></i></a></td>
                             <td><a href=""><i class="bi bi-pencil-square text-success"></i></a></td>
                         </tr>
@@ -47,5 +38,6 @@
 
     </div>
 </div>
+
 
 @endsection

@@ -14,11 +14,6 @@
                         download and
                         use this layout for commercial purposes. Please tell your friends about TemplateMo.</p>
                     <div class="search-input">
-
-                        <div class="col-lg-6 align-self-center section-heading">
-                            <a href="{{route('test')}}"><h2>Most Played</h2></a>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -79,7 +74,50 @@
     </div>
 </div>
 
+<div class="section most-played">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h6>TOP CATEGORY</h6>
+                    <h2>Most Buy</h2>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="main-button">
+                    <a href="shop.html">View All</a>
+                </div>
+            </div>
+            @foreach($groupnameskey as $row)
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{{route('Toitems')}}"><img src="assets/images/welcomePage/banner-bg1.png" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                        <span class="category">رقم المجموعة {{$row['id']}}</span>
+                        <h4>{{$row['itemgroupname']}}</h4>
+                        <a href="product-details.html">Explore</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
 
 
 
-@endsection
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="col-lg-12">
+                <p>Copyright © 2048 Mohammed Alghumayti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    @endsection

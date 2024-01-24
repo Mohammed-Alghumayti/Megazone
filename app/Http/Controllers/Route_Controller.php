@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Items;
+use App\Models\Itemgroups;
 
 class Route_Controller extends Controller
 {
-    //
+    //home
 
     public function RouteHome(){
-        return view('welcome');
+        $getGroup = Itemgroups::All();
+
+        return view('welcome',['groupnameskey' => $getGroup]);
     }
 
-    public function RouteTest(){
-        return view('itemspage');
-    }
+
+// user item page 
+public function RouteItemsPage(){
+    $getItems = Items::All();
+
+    return view('itemspage',['itemskey' => $getItems]);
+}
 
     //dashboard
     public function RouteCpanel(){
@@ -23,6 +30,13 @@ class Route_Controller extends Controller
         $getItems = Items::All();
 
         return view('dashboard.controlpanel', ['itmeskey' => $getItems]);
+    }
+
+    public function RouteGroupNames(){
+
+        $getGroup = Itemgroups::All();
+
+        return view('dashboard.groupnames', ['groupnameskey' => $getGroup]);
     }
     
 }

@@ -882,7 +882,7 @@ Most Played Style
 */
 
 .most-played {
-  background-color: #f7f7f7;
+  background-color: #f7eaea;
   padding: 100px 0px;
   border-radius: 150px;
 }
@@ -1090,7 +1090,7 @@ footer {
   margin-top: 150px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(footer\ bg1.png);
+  background-image: url(../images/welcomePage/footer\ bg1.png);
   min-height: 100px;
   border-radius: 150px 150px 0px 0px;
 }

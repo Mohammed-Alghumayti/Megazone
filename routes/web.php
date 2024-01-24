@@ -20,15 +20,16 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [Route_Controller::class, 'Routehome'])->name('home');
 
-Route::get('/testpage', [Route_Controller::class, 'RouteTest'])->name('test');
 Auth::routes();
+
+//user site
+Route::get('/u-itmes', [Route_Controller::class, 'RouteItemsPage'])->name('Toitems'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
 
 
 
 //dashboard
+Route::get('/cpanel', [Route_Controller::class, 'RouteCpanel'])->name('Tocpanel'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+Route::get('/ad-groupnames', [Route_Controller::class, 'RouteGroupNames'])->name('Togroupnames'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
 
-
-Route::get('/cpanel', [Route_Controller::class, 'RouteCpanel']); //--> logout
 //dashboard-controller
-
 Route::get('/logout', [Dashboard_Controller::class, 'Logout'])->name('logout'); //--> logout

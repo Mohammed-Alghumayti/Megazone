@@ -92,31 +92,38 @@
                     <div class="col-sm-2">
                         <div class=" px-5 bg-dark">
                             <div
-                                class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                                <ul class="mt-3 nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                                class="d-flex flex-column align-items-center  px-0 pt-2 text-white min-vh-100">
+                                <ul class=" nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                                     id="menu">
         
-                                    <li class="nav-item mt-5 mb-5" style="background-color: bisque; border-radius: 20px;">
-                                        <a href="#" class="p-3  nav-link align-middle px-3">
+                                    <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
+                                        <a href="{{route('Tocpanel')}}" class="p-2  nav-link align-middle px-3">
                                             <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-0 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;عرض المنتجات</span>
                                         </a>
                                     </li>
-        
-                                    <li class="nav-item mb-5" style="background-color: bisque; border-radius: 20px;">
-                                        <a href="#" class="p-3  nav-link align-middle px-3">
-                                            <i class="fs-3 bi-boxes"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-0 d-none d-sm-inline text-dark">&nbsp;المجموعات</span>
-                                        </a>
-                                    </li>
-        
-                                    <li class="nav-item mb-5" style="background-color: bisque; border-radius: 20px;">
-                                        <a href="#" class="p-3  nav-link align-middle px-3">
+
+                                    <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
+                                        <a href="{{route('Togroupnames')}}" class="p-2  nav-link align-middle px-3">
                                             <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-0 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;عرض المجموعات</span>
                                         </a>
                                     </li>
-        
+
+                                    <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
+                                        <a href="#" class="p-2  nav-link align-middle px-3">
+                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
+                                        <a href="#" class="p-2  nav-link align-middle px-3">
+                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                        </a>
+                                    </li>
+
         
                                 </ul>
                             </div>

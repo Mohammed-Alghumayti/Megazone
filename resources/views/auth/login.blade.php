@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class=" container" style="background: linear-gradient(179deg, rgba(133,85,163,0.9668242296918768) 30%, rgba(231,94,94,0.9612219887955182) 85%);" >
+<div class=" " style="background: linear-gradient(179deg, rgba(133,85,163,0.9668242296918768) 30%, rgba(231,94,94,0.9612219887955182) 85%);" >
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card" style="margin-top: 350px;">
+        <div class="col-md-7">
+            <div class="card mb-5" style="margin-top: 250px;">
                 <div class="card-header">{{ __('Login') }}</div >
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('login') }}" >
                         @csrf
 

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
+<script src="assets/Js/counter.js"></script>
 
-
-<div class="main-banner">
+<body onmouseover="incNbr()">
+    
+<div  class="main-banner">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 align-self-center">
@@ -14,7 +16,17 @@
                         download and
                         use this layout for commercial purposes. Please tell your friends about TemplateMo.</p>
                     <div class="search-input">
+
                     </div>
+                </div>
+            </div>
+
+            <div  class="col-lg-6 align-self-center">
+                <div class="caption header-text">
+                    <p id="nbr" style="margin-top: -100px; margin-left: 300px; font-size: 90px; font-weight: bolder;">100</p>
+                    <p id="nbr" style="margin-top: -100px; margin-left: 460px; font-size: 90px; font-weight: bolder;">%</p>
+                
+                    <h6 style="margin-top: -40px; margin-left: 310px; font-style: italic; font-weight: bold;">Secure website</h6>
                 </div>
             </div>
 
@@ -111,13 +123,18 @@
     </div>
 </div>
 
-    <footer>
-        <div class="container">
-            <div class="col-lg-12">
-                <p>Copyright © 2048 Mohammed Alghumayti. All rights reserved.</p>
-            </div>
+
+
+<footer>
+    <div class="container">
+        <div class="col-lg-12">
+            <p>Copyright © 2048 Mohammed Alghumayti. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
+</body>
 
 
-    @endsection
+
+
+@endsection

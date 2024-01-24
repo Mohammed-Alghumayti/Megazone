@@ -111,20 +111,17 @@
                                     </li>
 
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
-                                        <a href="#" class="p-2  nav-link align-middle px-3">
+                                        <a href="{{route('Toadditems')}}" class="p-2  nav-link align-middle px-3">
                                             <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;&nbsp;&nbsp;اضافة منتج</span>
                                         </a>
                                     </li>
-
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
-                                        <a href="#" class="p-2  nav-link align-middle px-3">
+                                        <a href="{{route('Togroupnames')}}" class="p-2  nav-link align-middle px-3">
                                             <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;المنتجات</span>
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الفواتير</span>
                                         </a>
                                     </li>
-
-        
                                 </ul>
                             </div>
                         </div>

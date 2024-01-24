@@ -38,5 +38,12 @@ public function RouteItemsPage(){
 
         return view('dashboard.groupnames', ['groupnameskey' => $getGroup]);
     }
+
+    public function RoutAddItems(){
+
+        $getGroup = Itemgroups::All();
+
+        return view('dashboard.additems', ['groupnameskey' => $getGroup]);
+    }
     
 }

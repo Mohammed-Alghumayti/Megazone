@@ -21,18 +21,8 @@ class Dashboard_Controller extends Controller
         Auth::logout();
        return redirect('/');
     }
-/*
-    public function RouteCpanel(){
 
-        $getItems = Items::All();
 
-        return view('dashboard.controlpanel', ['itmeskey' => $getItems]);
-    }
 
-    public function RouteGroupNames(){
 
-        $getGroup = Itemgroups::All();
-
-        return view('dashboard.groupnames', ['groupnameskey' => $getGroup]);
-    }*/
 }

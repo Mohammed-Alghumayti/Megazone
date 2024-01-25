@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row text-center ">
+    <div class="text-center ">
 
         <h1 class="mb-5">
             <div class=" alert alert-success">
@@ -10,7 +10,7 @@
             </div>
         </h1>
 
-        <div class="container col-sm-11 card">
+        <div class="card">
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -20,6 +20,7 @@
                             <th style="font-weight: bolder;">سعر العنصر</th>
                             <th style="font-weight: bolder;">الكمية</th>
                             <th style="font-weight: bolder;">لون العنصر</th>
+                            <th style="font-weight: bolder;">الصورة</th>
                             <th style="font-weight: bolder;">رقم المجموعة</th>
                             <th style="font-weight: bolder;">حذف</th>
                             <th style="font-weight: bolder;">تعديل</th>
@@ -34,9 +35,10 @@
                             <td>{{$row['price']}}</td>
                             <td>{{$row['qty']}}</td>
                             <td>{{$row['color']}}</td>
+                            <td>{{$row['image']}}</td>
                             <td>{{$row['itemgroupno']}}</td>
-                            <td><a href=""><i class="bi bi-trash text-danger"></i></a></td>
-                            <td><a href=""><i class="bi bi-pencil-square text-success"></i></a></td>
+                            <td><a href="{{route('delitem',['x'=>$row->id])}}"><i class="bi bi-trash text-danger"></i></a></td>
+                            <td><a href="{{route('edititem',['x'=>$row->id])}}"><i class="bi bi-pencil-square text-success"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -19,7 +19,7 @@
              <div style="padding-left: 50px;" class="col-lg-3 col-md-6 col-sm-6">
               <div class="item">
                 <div class="thumb">
-                  <a href=""><img style="padding: 30px; filter: grayscale(100%); cursor: not-allowed;" src="{{asset("assets/images/items/".$row->image)}}" alt=""></a>
+                  <a href=""><img style="padding: 30px; filter: grayscale(100%); cursor: not-allowed;" src="{{ asset('storage/' . $row->image) }}" alt=""></a>
                 </div>
                 <div class="down-content">
                   <span class="category">{{$row['price']}} SAR</span>
@@ -34,7 +34,7 @@
           <div style="padding-left: 50px;" class="col-lg-3 col-md-6 col-sm-6">
             <div class="item">
               <div class="thumb">
-                <a href="{{route('addtocart',['id'=>$row->id])}}"><img style="padding: 30px;" src="{{asset("assets/images/items/".$row->image)}}" alt=""></a>
+                <a href="{{route('addtocart',['id'=>$row->id])}}"><img style="padding: 30px;" src="{{ asset('storage/' . $row->image) }}" alt=""></a>
               </div>
               <div class="down-content">
                 <span class="category">{{$row['price']}} SAR</span>

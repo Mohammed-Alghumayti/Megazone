@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('carts', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->nullable();
+        Schema::create('receipts', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('item_name');
+            $table->decimal('price', 10, 2);
+            // Add other fields as needed
+            $table->timestamps();
+    
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('receipts');
     }
 };

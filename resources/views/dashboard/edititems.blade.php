@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form class="row g-3" action="{{route ('updateitem')}}" method="post">
+            <form class="row g-3" action="{{route ('updateitem')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="col-md-12">
                     <label for="itemname" class="form-label">اسم العنصر</label>

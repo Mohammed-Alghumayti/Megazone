@@ -9,11 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('carts', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
+            $table->string('itemid');
+            $table->timestamps();
         });
     }
 

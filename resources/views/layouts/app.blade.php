@@ -20,15 +20,20 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- othe css files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/mainPage.css">
+    <link rel="stylesheet" href={{asset("assets/css/mainPage.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
+
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 
-<body>
+<body onload="">
     <div id="app">
         <header class="header-area header-sticky">
             <div class="container">
@@ -36,30 +41,39 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">
-                                <img src="assets/images/mega-white.png" alt="" style="width: 210px; margin-top: -40px;">
+                            <a href="{{route('home')}}" class="logo">
+                                <img src="{{asset("assets/images/mega-white.png")}}" alt="" style="width: 210px; margin-top: -40px;">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
-                            <ul class="nav">
+                            <ul style="margin-top: 8px; margin-right: -10px;" class=" nav">
+                                <li><a  href="{{route('checkout')}}" class="bg-info rounded-pill text-light "> <i style="font-size: 17px;" class="bi bi-cart4"></i>
+                                    <span class="badge">{{Session::get('countcart')}}</span></a></li>
+                            </ul>
+
+                            <ul  class=" position-absolute top-0 start-50 nav">
                                 <li><a href="{{route('home')}}" class="active">Home</a></li>
-                                <li><a href="shop.html">Our Shop</a></li>
-                                <li><a href="product-details.html">Product Details</a></li>
+                                <li><a href="">Our Shop</a></li>
+                                <li><a href="{{route('home')}}#topcat">Categories</a></li>
 
                                 @if (!Auth::check())
-                                <li><a href="{{route('login')}}">Login</a></li>
+                                <li ><a href="{{route('login')}}">Login</a></li>
                                 <li><a href="{{route('register')}}">Sign In</a></li>
 
                                 @else
                                 <li><a href="{{route('logout')}}">Logout</a></li>
                                 @endif
-
+                                
                             </ul>
+
+                          
+
                             <a class='menu-trigger'>
                                 <span>Menu</span>
                             </a>
                             <!-- ***** Menu End ***** -->
                         </nav>
+
                     </div>
                 </div>
             </div>

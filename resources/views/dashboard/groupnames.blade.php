@@ -18,10 +18,16 @@
                             <form action="{{route('savegroups')}}" method="post">
                                 @csrf
                                 <label for="itemgroupname" class="p-3"
-                                    style="font-family: Cairo; font-weight: 600; font-size: 20px;">ادخل اسم المجموعة</label>
-                                <input type="text" class="form-control form-control-sm " name="itemgroupname"
+                                    style="font-family: Cairo; font-weight: 600; font-size: 20px;">ادخل اسم
+                                    المجموعة</label>
+                                <input type="text" class="mb-3 form-control form-control-sm " name="itemgroupname"
                                     id="itemgroupname" required>
-                                <div class="row">
+                                
+
+                                    <div class="mb-3">
+                                        <label for="image" style="font-family: Cairo; font-weight: 600; font-size: 20px;" class="form-label">ارفق صورة المنتج</label>
+                                        <input class="form-control" type="file" name="image" id="image">
+                                    </div>
 
                                     <div class="text-center mt-3">
                                         <button class="btn btn-primary mt-2" type="submit" onclick="cc()">حفظ</button>
@@ -54,7 +60,8 @@
                         <td>{{$row['id']}}</td>
                         <td>{{$row['itemgroupname']}}</td>
                         <td><a href="{{route('delg',['x'=>$row->id])}}"><i class="bi bi-trash text-danger"></i></a></td>
-                        <td><a href="{{route('editg',['x'=>$row->id])}}"><i class="bi bi-pencil-square text-success"></i></a></td>
+                        <td><a href="{{route('editg',['x'=>$row->id])}}"><i
+                                    class="bi bi-pencil-square text-success"></i></a></td>
                     </tr>
                     @endforeach
                 </tbody>

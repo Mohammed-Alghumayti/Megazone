@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('itemgroups', function (Blueprint $table) {
             $table->id();
             $table->string('itemgroupname');
+            $table->string('image');
             $table->timestamps();
         });
     }

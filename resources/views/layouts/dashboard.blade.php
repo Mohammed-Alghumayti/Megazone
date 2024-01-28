@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- othe css files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/mainPage.css">
+    <link rel="stylesheet" href={{asset("assets/css/mainPage.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -98,28 +98,28 @@
         
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
                                         <a href="{{route('Tocpanel')}}" class="p-2  nav-link align-middle px-3">
-                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;عرض المنتجات</span>
+                                            <i class="fs-3 bi-diagram-3"></i> <span style="font-size: 20px; font-weight: bold;"
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp; المنتجات</span>
                                         </a>
                                     </li>
 
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
                                         <a href="{{route('Togroupnames')}}" class="p-2  nav-link align-middle px-3">
-                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;عرض المجموعات</span>
+                                            <i class="fs-3 bi bi-collection"></i> <span style="font-size: 20px; font-weight: bold;"
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp; المجموعات</span>
                                         </a>
                                     </li>
 
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
                                         <a href="{{route('Toadditems')}}" class="p-2  nav-link align-middle px-3">
-                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
+                                            <i class="fs-3 bi bi-file-plus"></i> <span style="font-size: 20px; font-weight: bold;"
                                                 class="ms-4 d-none d-sm-inline text-dark">&nbsp;&nbsp;&nbsp;اضافة منتج</span>
                                         </a>
                                     </li>
                                     <li class="nav-item mt-3 mb-4" style="background-color: bisque; border-radius: 20px;">
                                         <a href="{{route('Togroupnames')}}" class="p-2  nav-link align-middle px-3">
-                                            <i class="fs-3 bi-boombox"></i> <span style="font-size: 20px; font-weight: bold;"
-                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الفواتير</span>
+                                            <i class="fs-3 bi bi-receipt-cutoff"></i> <span style="font-size: 20px; font-weight: bold;"
+                                                class="ms-4 d-none d-sm-inline text-dark">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الفواتير</span>
                                         </a>
                                     </li>
                                 </ul>

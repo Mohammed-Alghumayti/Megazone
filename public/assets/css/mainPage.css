@@ -5,6 +5,18 @@
 reset
 --------------------------------------------- 
 */
+
+*{
+  font-family: Cairo;
+}
+
+#gg,#gg1 {
+  opacity : 0; transition:opacity 1s
+}
+#nbr {
+  opacity : 0; transition:opacity 1s
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -146,7 +158,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #0071f8;
+  background-color: #31d2f2;
   color: #fff;
 }
 
@@ -765,8 +777,10 @@ Services Style
 }
 
 .features .item h4 {
-  font-size: 17px;
+  font-size: 20px;
   margin-top: 25px;
+  font-weight: bold;
+  color: #31d2f2;
   text-transform: uppercase;
 }
 
@@ -776,13 +790,31 @@ Services Style
   display: inline-block;
   text-align: center;
   line-height: 90px;
-  background-color: #0071f8;
+  background-color: #ee626b;
   border-radius: 50%;
   transition: all .3s;
 }
 
+#mainIcon{
+  color: #ffffff;
+  font-size: 40px;
+}
+
+
+
 .features .item:hover .image {
-  background-color: #ee626b;
+  background-color: #31d2f2;
+}
+
+.features .item:hover h4 {
+  transition: all .3s;
+  color: #ee626b;
+}
+
+#whaitBox:hover #mainIcon{
+  transition: all .3s;
+  color: #ee626b;
+
 }
 
 
@@ -906,19 +938,21 @@ Most Played Style
   overflow: hidden;
 }
 
+
 .most-played .item .down-content {
   padding: 20px 15px 40px 15px;
 }
 
 .most-played .item .down-content span.category {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   color: #7a7a7a;
   margin-bottom: 5px;
   display: inline-block;
 }
 
 .most-played .item .down-content h4 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   transition: all .3s;
 }
@@ -943,12 +977,20 @@ Most Played Style
 }
 
 .most-played .item:hover .down-content h4 {
-  color: #0071f8;
+  color: #31d2f2;
 }
 
 .most-played .item:hover .down-content a {
-  background-color: #0071f8;
+  background-color: #31d2f2;
 }
+
+
+
+
+.most-played .item:hover {
+  transition: all .1s;
+  border: #31d2f2 solid 2px;
+  }
 
 
 /* 
@@ -1642,6 +1684,18 @@ body {
   }
 }
 
+@media screen and (max-width: 900px) {
+
+  #vv{
+    margin-left: -300px;
+    margin-top: 100px;
+  }
+
+  #gg{
+    margin-right: -50px;
+  }
+
+}
 @media (max-width: 1200px) {
   
 }

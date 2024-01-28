@@ -18,13 +18,18 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-
-Route::get('/', [Route_Controller::class, 'Routehome'])->name('home');
+Route::get('/', [Route_Controller::class, 'Routehome'])->name('home');// route me to 'welcome'page.
 
 Auth::routes();
 
 //user site
-Route::get('/u-itmes', [Route_Controller::class, 'RouteItemsPage'])->name('Toitems'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+Route::get('/u-itmes/{id}', [Route_Controller::class, 'RouteItemsPage'])->name('Toitems'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+
+//ADD to cart
+Route::get('/checkout', [Route_Controller::class, 'RoutToCheckOut'])->name('checkout')->middleware('auth');
+
+
+Route::get('/u-addcart/{id}', [Action_Controller::class, 'AddtoCart'])->name('addtocart');
 
 
 
@@ -46,6 +51,8 @@ Route::post('/saveitem', [Action_Controller::class, 'SaveItems'])->name('savegit
 Route::get('/deletitem/{x}', [Action_Controller::class, 'DelItem'])->name('delitem');
 Route::get('/edititem/{x}', [Action_Controller::class, 'EditItem'])->name('edititem');
 Route::post('/cpanel', [Action_Controller::class, 'UpdateItem'])->name('updateitem'); 
+
+
 
 //Route::get('/testapi', [Action_Controller::class, 'testapi'])->name('editg');
 

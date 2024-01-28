@@ -2,45 +2,66 @@
 @section('content')
 
 <div class="main-banner">
-    <div class="container">
-        <div class="row">
-            
-        <div class="section most-played">
-    <div class="container">
-      <div class="row">
+  <div class="container">
+    <div class="row">
+      @foreach($groupnameskey as $row)
 
-        <div class="col-lg-6">
-          <div class="section-heading">
-            <h6>TOP GAMES</h6>
-            <h2>Most Played</h2>
+      <div class="container text-center">
+        <h1 style="font-size: 45px; font-weight: bolder; width: auto; border: solid 2px rgb(235, 213, 213);"
+          class="mb-3 badge bg-info rounded-pill  text-light">{{$row['itemgroupname']}}</h1>
+      </div>
+
+      <div class="section most-played">
+        <div class="container">
+          <div class="row">
+            @foreach ($itemskey as $row)
+            @if($row['qty'] <= 0)
+             <div style="padding-left: 50px;" class="col-lg-3 col-md-6 col-sm-6">
+              <div class="item">
+                <div class="thumb">
+                  <a href=""><img style="padding: 30px; filter: grayscale(100%); cursor: not-allowed;" src="{{asset("assets/images/items/".$row->image)}}" alt=""></a>
+                </div>
+                <div class="down-content">
+                  <span class="category">{{$row['price']}} SAR</span>
+                  <h4>{{$row['itemname']}}</h4>
+                  <a style="filter: grayscale(100%); cursor: not-allowed;" class="col-sm-8" href=""><span>Out of
+                      stock</span></a>
+                </div>
+              </div>
           </div>
-        </div>
 
-        <div class="col-lg-6">
-          <div class="main-button">
-            <a href="shop.html">View All</a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/welcomePage/banner-bg1.png" alt=""></a>
+          @else
+          <div style="padding-left: 50px;" class="col-lg-3 col-md-6 col-sm-6">
+            <div class="item">
+              <div class="thumb">
+                <a href="{{route('addtocart',['id'=>$row->id])}}"><img style="padding: 30px;" src="{{asset("assets/images/items/".$row->image)}}" alt=""></a>
+              </div>
+              <div class="down-content">
+                <span class="category">{{$row['price']}} SAR</span>
+                <h4>{{$row['itemname']}}</h4>
+                <a class="col-sm-8" href="{{route('addtocart',['id'=>$row->id])}}"><span>Add Cart</span></a>
+              </div>
             </div>
-            <div class="down-content">
-              <span class="category">Adventure</span>
-              <h4>Assasin Creed</h4>
-              <a href="product-details.html">Explore</a>
-            </div>
           </div>
-        </div>
+          @endif
+          @endforeach
 
+        </div>
       </div>
     </div>
-  </div>
 
-        </div>
-    </div>
+  </div>
+  @endforeach
 </div>
+</div>
+
+<footer>
+  <div class="container ">
+    <div class=" col-lg-12">
+      <p>Copyright © 2048 Mohammed Alghumayti. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
 
 @endsection

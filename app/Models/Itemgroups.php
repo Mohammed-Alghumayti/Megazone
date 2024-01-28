@@ -10,6 +10,7 @@ class Itemgroups extends Model
     use HasFactory;
 
     protected $fillable = [
-        'itemgroupname'
+        'itemgroupname',
+        'image'
     ];
 }

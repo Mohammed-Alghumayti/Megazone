@@ -29,6 +29,7 @@
                     @if(isset($itmeskey))
                     <tbody>
                         @foreach($itmeskey as $row)
+                        
                         <tr>
                             <td>{{$row['id']}}</td>
                             <td>{{$row['itemname']}}</td>
@@ -40,6 +41,7 @@
                             <td><a href="{{route('delitem',['x'=>$row->id])}}"><i class="bi bi-trash text-danger"></i></a></td>
                             <td><a href="{{route('edititem',['x'=>$row->id])}}"><i class="bi bi-pencil-square text-success"></i></a></td>
                         </tr>
+                       
                         @endforeach
                     </tbody>
                     @endif

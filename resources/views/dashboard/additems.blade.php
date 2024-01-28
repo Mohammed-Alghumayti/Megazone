@@ -13,7 +13,7 @@
     <div style="font-size: 15px; font-family: Cairo; font-weight: bold;" class="col-sm-12">
         <div class="card">
             <div class="card-body">
-                <form class="row g-3" action="{{route('savegitems')}}" method="post">
+                <form class="row g-3" action="{{route('savegitems')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-8">
                         <label for="itemname" class="form-label">اسم العنصر</label>

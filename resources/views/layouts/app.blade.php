@@ -46,25 +46,27 @@
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
-                            <ul style="margin-top: 8px; margin-right: -10px;" class=" nav">
-                                <li><a  href="{{route('checkout')}}" class="bg-info rounded-pill text-light "> <i style="font-size: 17px;" class="bi bi-cart4"></i>
-                                    <span class="badge">{{Session::get('countcart')}}</span></a></li>
-                            </ul>
+                        
 
-                            <ul  class=" position-absolute top-0 start-50 nav">
+                            <ul  class="   nav">
+                                
                                 <li><a href="{{route('home')}}" class="active">Home</a></li>
                                 <li><a href="">Our Shop</a></li>
                                 <li><a href="{{route('home')}}#topcat">Categories</a></li>
 
                                 @if (!Auth::check())
                                 <li ><a href="{{route('login')}}">Login</a></li>
-                                <li><a href="{{route('register')}}">Sign In</a></li>
+                                <li><a style="background-color: #ee626b;"  href="{{route('register')}}">Sign In</a></li>
 
                                 @else
-                                <li><a href="{{route('logout')}}">Logout</a></li>
+                                <li ><a style="background-color: #ee626b;" href="{{route('logout')}}">Logout</a></li>
                                 @endif
+                                <li ><a  href="{{route('checkout')}}" class="bg-info rounded-pill text-light "> <i style="font-size: 17px;" class="bi bi-cart4"></i>
+                                    <span class="badge">{{Session::get('countcart')}}</span></a></li>
+
                                 
                             </ul>
+                            
 
                           
 
@@ -73,6 +75,7 @@
                             </a>
                             <!-- ***** Menu End ***** -->
                         </nav>
+                        
 
                     </div>
                 </div>

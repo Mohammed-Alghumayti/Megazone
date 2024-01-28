@@ -22,35 +22,41 @@ Route::get('/', [Route_Controller::class, 'Routehome'])->name('home');// route m
 
 Auth::routes();
 
-//user site
+//---------user site------
 Route::get('/u-itmes/{id}', [Route_Controller::class, 'RouteItemsPage'])->name('Toitems'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
 
-//ADD to cart
+
 Route::get('/checkout', [Route_Controller::class, 'RoutToCheckOut'])->name('checkout')->middleware('auth');
+Route::post('/u-thx', [Route_Controller::class, 'RouteToThanks'])->name('comeagain');
 
+Route::get('/thx', function (){
+    return view('thanks');
+});
 
+    //ADD to cart
 Route::get('/u-addcart/{id}', [Action_Controller::class, 'AddtoCart'])->name('addtocart');
 
 
+//---------user site--end----
+
 
 //dashboard
-Route::get('/cpanel', [Route_Controller::class, 'RouteCpanel'])->name('Tocpanel'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
-Route::get('/ad-groupnames', [Route_Controller::class, 'RouteGroupNames'])->name('Togroupnames'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
-Route::get('/ad-additems', [Route_Controller::class, 'RoutAddItems'])->name('Toadditems'); //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+Route::get('/cpanel', [Route_Controller::class, 'RouteCpanel'])->name('Tocpanel')->middleware('auth');; //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+Route::get('/ad-groupnames', [Route_Controller::class, 'RouteGroupNames'])->name('Togroupnames')->middleware('auth');; //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
+Route::get('/ad-additems', [Route_Controller::class, 'RoutAddItems'])->name('Toadditems')->middleware('auth');; //--> {{will make it => secure}} defual route to cpanel which is 'show items'.
 
 //dashboard -> itemsgroup functions
-Route::post('/savegroupitem', [Action_Controller::class, 'SaveGroupItems'])->name('savegroups'); 
-
-Route::get('/deletegroup/{x}', [Action_Controller::class, 'DelGroupItem'])->name('delg');
-Route::get('/editgroup/{x}', [Action_Controller::class, 'EditGroupItem'])->name('editg');
-Route::post('/ad-groupnames', [Action_Controller::class, 'UpdateGroupItem'])->name('updateg'); 
+Route::post('/savegroupitem', [Dashboard_Controller::class, 'SaveGroupItems'])->name('savegroups'); 
+Route::get('/deletegroup/{x}', [Dashboard_Controller::class, 'DelGroupItem'])->name('delg');
+Route::get('/editgroup/{x}', [Dashboard_Controller::class, 'EditGroupItem'])->name('editg');
+Route::post('/ad-groupnames', [Dashboard_Controller::class, 'UpdateGroupItem'])->name('updateg'); 
 
 
 //dashboard -> items 
-Route::post('/saveitem', [Action_Controller::class, 'SaveItems'])->name('savegitems'); 
-Route::get('/deletitem/{x}', [Action_Controller::class, 'DelItem'])->name('delitem');
-Route::get('/edititem/{x}', [Action_Controller::class, 'EditItem'])->name('edititem');
-Route::post('/cpanel', [Action_Controller::class, 'UpdateItem'])->name('updateitem'); 
+Route::post('/saveitem', [Dashboard_Controller::class, 'SaveItems'])->name('savegitems'); 
+Route::get('/deletitem/{x}', [Dashboard_Controller::class, 'DelItem'])->name('delitem');
+Route::get('/edititem/{x}', [Dashboard_Controller::class, 'EditItem'])->name('edititem');
+Route::post('/cpanel', [Dashboard_Controller::class, 'UpdateItem'])->name('updateitem'); 
 
 
 

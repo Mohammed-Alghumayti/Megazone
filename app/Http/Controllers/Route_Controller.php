@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Items;
 use App\Models\Itemgroups;
+use App\Models\Receipt;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -30,13 +31,15 @@ public function RouteItemsPage($id){
     $getItems = Items::where('itemgroupno',$id)
     ->get();
 
+    
+
     $getGroup = Itemgroups::where('id',$id)->get();
    
 
     return view('itemspage',['itemskey' => $getItems],['groupnameskey' => $getGroup]);
 }
 
-    //dashboard
+    //------dashboard-----start
     public function RouteCpanel(){
 
         $getItems = Items::All();
@@ -59,6 +62,8 @@ public function RouteItemsPage($id){
         return view('dashboard.additems', ['groupnameskey' => $getGroup]);
     }
 
+     //------dashboard-----end
+
 
 
     public function RoutToCheckOut()
@@ -74,5 +79,20 @@ public function RouteItemsPage($id){
 
     return view('payment', compact('cartItems'),['total'=>$total]);
     }
+
+
+    public function RouteToThanks()
+    {
+
+        DB::table('carts')->delete();
+    
+        // Clear the cart count in the session
+        Session::forget('countcart');       
+
+        return view('thanks');
+    
+    }
+    
+
     
 }

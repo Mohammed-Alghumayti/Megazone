@@ -6,14 +6,13 @@
     <div class="container">
 
         <div class=" text-center">
-            <h1 style="font-size: 45px; font-weight: bolder; width: auto; border: solid 2px rgb(235, 213, 213);"
-                class=" badge bg-info rounded-pill  text-light">CHECKOUT</h1>
+            <h1 style="font-size: 45px; font-weight: bolder; width: auto; border: solid 2px rgb(235, 213, 213);" class=" badge bg-info rounded-pill  text-light">CHECKOUT</h1>
         </div>
 
         <div class="section most-played">
-            
+
             <div class="container">
-                <h1 style="font-weight: bold;" class="text-center">Thanks for buying from us ;)</h1>
+                <h1 style="font-weight: bold;" class="text-center">Have a nice buy ;)</h1>
                 <div class="row">
 
                     <div class="p-4">
@@ -22,64 +21,66 @@
                                 <div class="col-md-8 col-sm-6 col-xs-12">
                                     <div class="p-2">
                                         <div class="mt-5">
-                                            <div>
-                                                <label class="d-block" for="cardNumber"><strong>Card
-                                                        Number</strong></label>
-                                                <small class="text-secondary">Enter the 16 - digit number printed on the
-                                                    card </small>
-                                                <div class="position-relative">
-                                                    <input type="text" id="cardNumber" class="form-control mt-3"><span
-                                                        id="cardType"></span>
-                                                </div>
-                                            </div>
-                                            <div class="mt-5">
-                                                <div class="row align-items-center">
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <label class="d-block" for="cvv"><strong>CVV
-                                                                Number</strong></label>
-                                                        <small class="text-secondary">Enter the 3 or 4 digit number
-                                                            printed at back of the
-                                                            card </small>
-                                                    </div>
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <input type="text" id="cvv" class="form-control">
+                                            <form action="{{route('comeagain')}}" method="post">
+                                            @csrf
+                                                <div>
+                                                    <label class="d-block" for="cardNumber"><strong>Card
+                                                            Number</strong></label>
+                                                    <small class="text-secondary">Enter the 16 - digit number printed on the
+                                                        card </small>
+                                                    <div class="position-relative">
+                                                        <input type="text" id="cardNumber" class="form-control mt-3"><span id="cardType"></span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-5">
-                                                <div class="row align-items-center">
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <label class="d-block" for="expiry_mm"><strong>Expiry
-                                                                Date</strong></label>
-                                                        <small class="text-secondary">Enter the expiration date of the
-                                                            card </small>
-                                                    </div>
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <div class="d-flex align-items-center">
-                                                            <input type="text" id="expiry_mm" class="form-control">
-                                                            <span class="fs-4 mx-3">/</span>
-                                                            <input type="text" id="expiry_yy" class="form-control">
+                                                <div class="mt-5">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <label class="d-block" for="cvv"><strong>CVV
+                                                                    Number</strong></label>
+                                                            <small class="text-secondary">Enter the 3 or 4 digit number
+                                                                printed at back of the
+                                                                card </small>
+                                                        </div>
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <input type="text" id="cvv" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-5">
-                                                <div class="row align-items-center">
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <label class="d-block" for="postal"><strong>Postal (Zip)
-                                                                Code</strong></label>
-                                                        <small class="text-secondary">Enter the postal / Zip code of
-                                                            billing address
-                                                        </small>
-                                                    </div>
-                                                    <div class="col-sm-6 col-xs-12">
-                                                        <div class="d-flex align-items-center">
-                                                            <input type="text" id="postal" class="form-control">
+                                                <div class="mt-5">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <label class="d-block" for="expiry_mm"><strong>Expiry
+                                                                    Date</strong></label>
+                                                            <small class="text-secondary">Enter the expiration date of the
+                                                                card </small>
+                                                        </div>
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <div class="d-flex align-items-center">
+                                                                <input type="text" id="expiry_mm" class="form-control">
+                                                                <span class="fs-4 mx-3">/</span>
+                                                                <input type="text" id="expiry_yy" class="form-control">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <button class="btn btn-primary mt-5 w-100">Pay Now</button>
+                                                <div class="mt-5">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <label class="d-block" for="postal"><strong>Postal (Zip)
+                                                                    Code</strong></label>
+                                                            <small class="text-secondary">Enter the postal / Zip code of
+                                                                billing address
+                                                            </small>
+                                                        </div>
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <div class="d-flex align-items-center">
+                                                                <input type="text" id="postal" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-primary mt-5 w-100">Pay Now</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +89,7 @@
                                     <div style="background:#eff4f8;border-radius:16px;">
                                         <div class="p-4">
                                             <table class="w-100" id="cartTable">
-                                            @foreach($cartItems as $cartItem)
+                                                @foreach($cartItems as $cartItem)
                                                 <tr>
                                                     <td><span class="text-secondary">Product</span></td>
                                                     <td><strong>{{ $cartItem->item->itemname }}</strong></td>
@@ -106,7 +107,7 @@
                                                 $total += 12 + $cartItem->item->price;
                                                 @endphp
 
-                                            @endforeach
+                                                @endforeach
                                             </table>
                                             <hr>
                                         </div>

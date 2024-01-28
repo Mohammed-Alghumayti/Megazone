@@ -11,14 +11,20 @@
                     <form action="{{route('updateg')}}" method="post">
                         @csrf
                         <label for="itemgroupname" class="p-3" style="font-family: Cairo; font-weight: 600; font-size: 20px;">ادخل اسم المجموعة الجديد</label>
-                        <input type="text" class="form-control form-control-sm-6 " value="{{$editgroupkey -> itemgroupname}}" name="itemgroupname" id="itemgroupname"required>
-                        
+                        <input type="text" class="form-control form-control-sm-6 " value="{{$editgroupkey -> itemgroupname}}" name="itemgroupname" id="itemgroupname" required>
+
+                        <div class="mt-3 mb-3">
+                            <label for="image" style="font-family: Cairo; font-weight: 600; font-size: 20px;" class="form-label">ارفق صورة المنتج</label>
+                            <input class="form-control form-control-sm-6" type="file" name="image" id="image">
+                        </div>
+
                         <div class="row">
                             <input type="text" name="id" value="{{$editgroupkey -> id}}" hidden>
+                        </div>
 
-                            <div class="text-center mt-3">
-                                <button class="btn btn-primary mt-2" type="submit">حفظ</button>
-                            </div>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-primary mt-2" type="submit">حفظ</button>
+                        </div>
                     </form>
                 </div>
             </div>
